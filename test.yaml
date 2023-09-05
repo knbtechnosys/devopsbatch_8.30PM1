@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+          - name: install apache2
+            apt:
+                    name: apache2
+                    state: present
+
+          - name: install tree
+            apt:
+                    name: tree
+                    state: present
+~
+
