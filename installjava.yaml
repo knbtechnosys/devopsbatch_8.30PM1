@@ -9,14 +9,14 @@
         when: ansible_os_family == "Debian"
 
       - name: install pyhton 
-        yum:
-           name: python3.9
+        package:
+           name: python3
            state: present  
         when: ansible_os_family == "RedHat"
 
-      # - name: Set Python interpreter for Ansible
-      #   set_fact:
-      #     ansible_python_interpreter: /usr/bin/python2.7
+      - name: Set Python interpreter for Ansible to Python 3
+        set_fact:
+         ansible_python_interpreter: /usr/bin/python3
 
 
       - name: install java openjdk8 on RedHat Machine 
