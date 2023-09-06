@@ -8,11 +8,11 @@
           state: present
         when: ansible_os_family == "Debian"
 
-      # - name: install pyhton 
-      #   yum:
-      #      name: python2.7
-      #      state: present  
-      #   when: ansible_os_family == "RedHat"
+      - name: install pyhton 
+        yum:
+           name: python3.9
+           state: present  
+        when: ansible_os_family == "RedHat"
 
       # - name: Set Python interpreter for Ansible
       #   set_fact:
