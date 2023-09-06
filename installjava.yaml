@@ -11,7 +11,7 @@
 
       - name: install java openjdk8 on RedHat Machine 
         yum:
-           name: java-17-openjdk
+           name: java-11-amazon-corretto
            state: present  
         when: ansible_os_family == "RedHat"
 
