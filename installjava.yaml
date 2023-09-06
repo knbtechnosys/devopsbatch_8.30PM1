@@ -1,4 +1,5 @@
 ---
+- name: Install Java 11 Amazon Corretto
 - hosts: all
   become: yes
   become_user: root
@@ -8,6 +9,16 @@
           name: openjdk-8-jre
           state: present
         when: ansible_os_family == "Debian"
+
+      - name: Ensure Python 3 is installed
+        raw: test -e /usr/bin/python3 || (apt -y update && apt install -y python3-minimal)
+          changed_when: false
+        when: ansible_os_family == "RedHat"
+
+      - name: Set Python interpreter for Ansible to Python 3
+        set_fact:
+          ansible_python_interpreter: /usr/bin/python3
+        when: ansible_os_family == "RedHat"
 
       - name: install java openjdk8 on RedHat Machine 
         yum:
