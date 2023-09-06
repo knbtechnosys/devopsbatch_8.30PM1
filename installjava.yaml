@@ -1,6 +1,7 @@
 ---
 - hosts: all
   become: yes
+  become_user: root
   tasks:
       - name : install java openjdk8 on ubuntu 20.04
         apt: 
