@@ -14,9 +14,9 @@
            state: present  
         when: ansible_os_family == "RedHat"
 
-     - name: Set Python interpreter for Ansible
-       set_fact:
-        ansible_python_interpreter: /usr/bin/python2.7
+      - name: Set Python interpreter for Ansible
+        set_fact:
+          ansible_python_interpreter: /usr/bin/python2.7
 
 
       - name: install java openjdk8 on RedHat Machine 
