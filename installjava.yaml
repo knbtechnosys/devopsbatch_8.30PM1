@@ -1,8 +1,6 @@
 ---
 - hosts: all
   become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python2.7
   tasks:
       - name : install java openjdk8 on ubuntu 20.04
         apt: 
@@ -15,6 +13,10 @@
            name: python27
            state: present  
         when: ansible_os_family == "RedHat"
+
+     - name: Set Python interpreter for Ansible
+       set_fact:
+        ansible_python_interpreter: /usr/bin/python2.7
 
 
       - name: install java openjdk8 on RedHat Machine 
