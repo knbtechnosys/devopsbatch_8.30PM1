@@ -10,7 +10,7 @@
 
       - name: install pyhton 
         yum:
-           name: python27
+           name: python2.7
            state: present  
         when: ansible_os_family == "RedHat"
 
