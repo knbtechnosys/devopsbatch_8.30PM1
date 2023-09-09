@@ -1,31 +1,12 @@
 ---
 - hosts: all
   become: yes
-  become_user: root
   tasks:
       - name : install java openjdk8 on ubuntu 20.04
         apt: 
           name: openjdk-8-jre
           state: present
         when: ansible_os_family == "Debian"
-
-      # - name: Ensure Python 3 is installed
-      #   package:
-      #     name: python3
-      #     state: present
-
-      # - name: Set Python interpreter for Ansible to Python 3
-      #   set_fact:
-      #      ansible_python_interpreter: /usr/bin/python3
-      # - name: List yum repos
-      #   command: yum repolist
-      #   register: repos
-      # - debug: var=repos.stdout_lines
-
-      # - name: Search for Java packages
-      #   command: yum search java-1.8.0-openjdk
-      #   register: java_packages
-      # - debug: var=java_packages.stdout_lines
 
       - name: install java openjdk8 on RedHat Machine 
         yum:
