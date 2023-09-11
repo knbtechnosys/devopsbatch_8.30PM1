@@ -8,4 +8,4 @@
   tasks:
        - name :  i want to display value of the variable
          debug: 
-           msg: "{{myvar1}}"
+           msg: "{{myvar2}}"
