@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: i want to run linux command on ansible node
-      command: hostname -ff
+      command: hostnamee -f
       register: myResult
 
     - name: i want to display result of linux command
