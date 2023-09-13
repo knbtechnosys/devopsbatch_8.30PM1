@@ -2,10 +2,21 @@
 - hosts: mywebserver
   become: yes
   vars:
-   myvar1 : nitin
+   myvar1 : git
    myvar2 : tree
    myvar3 : wget
   tasks:
        - name :  i want to display value of the variable
          debug: 
            msg: "{{myvar2}}"
+
+       - name: i want to install package
+         apt :
+            name: "{{item}}"
+            state: present
+         when: ansible_os_family == "Debian"
+         loop:
+         - "{{myvar1}}"
+         - "{{myvar2}}"
+         - "{{myvar3}}"
+           
