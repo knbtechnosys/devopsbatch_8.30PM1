@@ -9,6 +9,7 @@
     - name: i want to display result of linux command
       debug:
         msg: "{{myResultt}}"
+      ignore_errors: yes
 
     - name:  i want to install git
       apt:
