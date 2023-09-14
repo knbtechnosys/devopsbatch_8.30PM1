@@ -1,0 +1,8 @@
+---
+- hosts: mywebserver
+  become: yes
+  tasks:
+    - name:  i want to create a file in a ubuntu server
+      file: 
+         path: /home/nitin/mytestfile
+         state: touch  
