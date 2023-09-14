@@ -1,0 +1,23 @@
+---
+- hosts: mywebserver
+  become: yes
+  tasks:
+    - name: i want to install tree
+      apt:
+        name: tree
+        state: present  
+        tags: mytree
+
+
+    - name:  i want install wget
+      apt:
+        name: wget 
+        state: present
+        tags: mywget
+
+    
+    - name: i want install git
+      apt:
+        name: git
+        state: present  
+        tags: mygit
