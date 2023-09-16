@@ -1,0 +1,5 @@
+
+    - name:  i want to create a file in a ubuntu server
+      file: 
+         path: /home/nitin/mytestfile1
+         state: touch  
