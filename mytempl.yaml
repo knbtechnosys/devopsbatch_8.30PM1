@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.26.148  
+- hosts: mywebserver
   become: yes
   tasks:
     - name: i want to install apache2 on ubuntu
