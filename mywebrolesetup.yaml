@@ -1,0 +1,5 @@
+---
+- hosts: mywebserver
+  become: yes
+  roles:
+   - mywebrole
