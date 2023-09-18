@@ -14,7 +14,7 @@
         dest: /var/www/html/index.html
       notify: restartwebserver
 
-   handlers: 
+  handlers: 
     - name:  restartwebserver
       service:
         name: apache2
